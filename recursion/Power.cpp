@@ -1,15 +1,15 @@
 #include <bits/stdc++.h>
 using namespace std;
-int check(int s,int i){
-  if(i==0)return 1;
-  if(i==1)return s;
-  int ans = check(s,i/2);
-  if(i%2==0) return ans*ans;
-  if(i%2==1) return s*ans*ans;
+int power(int a,int b){
+  if(b==0)return 1;
+  if(b==1)return a;
+  int ans = power(a,b/2);
+  if(b%2==0) return ans*ans;
+  else return ans*ans*a;
 }
 int main() {
-  int s,c;
-  cin>>s>>c;
-  cout<<check(s,c);
+  int a,b;
+  cin>>a>>b;
+  cout<<power(a,b);
   return 0;
 }
