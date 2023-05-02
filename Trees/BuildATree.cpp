@@ -6,7 +6,7 @@ class node{
     node* left;
     node* right;
     node(int a){
-        data = int a;
+        data = a;
         this->left = NULL;
         this->right = NULL;
     }
@@ -17,7 +17,7 @@ node* Build(node* &root){
     int d;
     cin>>d;
     if(d==-1) return NULL;
-    roo = new node(d);
+    root = new node(d);
     cout<<"enter the left node of "<<d<<" = ";
     root->left = Build(root->left);
     cout<<"enter the right node of "<<d<<" = ";
@@ -26,15 +26,15 @@ node* Build(node* &root){
 }
 void post(node* root){
     if(root){
-        pos(root->left);
+        post(root->left);
         cout<<root->data;
-        pos(root->right);
+        post(root->right);
     }
 }
 int main()
 {
     node* root = NULL;
-    root = build(root);
+    root = Build(root);
     post(root);
     return 0;
 }
