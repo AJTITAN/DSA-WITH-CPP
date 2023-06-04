@@ -8,14 +8,15 @@ int main()
 {
     unordered_map<int,vector<int>>mp;
     int n,m;
+    cout<<"enter the no. of node and vertices = ";
     cin>>n>>m;
     for(int i=0;i<m;i++){
-        int u,int v;
-        for(int j=0;j<n;j++){
+        int u,v;
             cin>>u>>v;
             insert(mp,u,v,0);
-        }
+        
     }
+    cout<<"done"<<endl;
     for(auto i:mp){
         cout<<i.first<<" --> ";
         for(auto j:i.second){
